@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<body>
+    <h1>Cool Cat
+    </h1>
+    <h2>The cat has been clicked <span id="clicks">0 </span> times
+    </h2>
+    <img id="frank" src="http://www.sandiegopetsmagazine.com/wp-content/uploads/2015/03/Kitty1-Hi-Res.jpg">
+    <script>
+        if (localStorage.getItem("cat")){
+            var clicks =localStorage.getItem("cat") 
+            document.getElementById("clicks").innerHTML = clicks
+        } else{
+            var clicks = 0
+        }
+        
+        document.getElementById("frank").addEventListener("click", function () {
+            clicks++
+            localStorage.setItem("cat", clicks)
+            document.getElementById("clicks").innerHTML = clicks
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+h1{
+    text-align:center; 
+    font-size: 20px;
+
+}
+img{
+    display:block;
+    margin:auto;
+    width:300px; 
+}
+.header{
+    color:red;
+    
+}
+.info{
+    padding:10px;
+    margin:1px; 
+    border:1px solid black;
+}
+a{
+    color:purple;
+}
+a:visited{
+    color:red;
+}
+.no-space{
+    margin:0;
+    padding:0;
+}
+.custom-headers{
+    padding-left:30px
+}
+#history img{
+    float:left;
+    margin-right:30px
+}
+.indicators{
+    display:none;
+}
+.slider{
+    height:200px;
+}
+
+.modal .modal-content{
+    padding:0px;
+}
+
+.modal{
+    height:300px;
+    width:300px;
+    background-color:black;
+}
+.cards-container {
+    column-break-inside: avoid;
+  }
+  .cards-container .card {
+    display: inline-block;
+    overflow: visible;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .cards-container {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+    }
+  }
+  @media only screen and (min-width: 601px) {
+    .cards-container {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+  @media only screen and (min-width: 993px) {
+    .cards-container {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+    }
+  }
+  .text-center {
+    text-align: center;
+  }
+  

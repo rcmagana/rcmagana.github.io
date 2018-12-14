@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+
+<body>
+    <h1>Fitness</h1>
+    <h2>
+        Ideal Body Weight
+    </h2>
+    <h2 id="results">
+
+    </h2>
+    <form>
+        Gender <input id="gender" type="text" name="fname"><br>
+        Height (in inches): <input id="height" type="text" name="lname"><br>
+        <input id="submit" type="submit" value="Submit">
+    </form>
+    <h2>
+        Base Metabolic Rate
+    </h2>
+    <h2 id="bmrresults">
+
+    </h2>
+    <form>
+        Gender <input id="gender2" type="text" name="fname"><br>
+        Height (in inches): <input id="height2" type="text" name="lname"><br>
+        Age <input id="age2" type="text" name="fname"><br>
+        Weight: <input id="weight2" type="text" name="lname"><br>
+        <input id="submitBMR" type="submit" value="Submit">
+    </form>
+    <script>
+        document.getElementById("submit").addEventListener("click", function (event) {
+            event.preventDefault()
+            var gender = document.getElementById("gender").value
+            var height = document.getElementById("height").value
+            var result = ibw(gender, height);
+            document.getElementById("results").innerHTML = `Your ideal weight should be: ${result}!`
+        })
+        document.getElementById("submitBMR").addEventListener("click", function (event) {
+            event.preventDefault()
+            var gender = document.getElementById("gender2").value
+            var height = parseInt(document.getElementById("height2").value)
+            var weight = parseInt(document.getElementById("weight2").value)
+            var age = parseInt(document.getElementById("age2").value)
+            var result = bmr(gender, height, weight, age);
+            document.getElementById("bmrresults").innerHTML = `Your BMR should be: ${result}!`
+        })
+        function ibw(gender, height) {
+            if (height > 60) {
+                height = height - 60
+            } else {
+                height = 0
+            }
+            if (gender === "male") {
+                return height * 6 + 106
+            }
+            if (gender === "female") {
+                return height * 5 + 100
+            }
+        }
+
+
+        function bmr(gender, height, weight, age) {
+            if (gender === "male") {
+                return 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age)
+            }
+            if (gender === "female") {
+                return 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age)
+            }
+        }
+    </script>
+</body>
+
+</html>
